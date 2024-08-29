@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Bienvenue{% endblock %}
+
+{% block style %} 
+<style>
+    .grouper {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0;
+    }
+
+    .form-container {
+
+        padding: 10px;
+        padding-top: 100px;
+        border-radius: 12px;
+        max-width: 600px;
+        width: 90%;
+    }
+
+    .form-container h1 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .form-container p {
+        color: #ad1289;
+        text-align: right;
+        align-items: flex-start;
+        height: 30px;
+
+
+    }
+
+    .form-container a {
+        color: #ad1289;
+        text-decoration: none;
+    }
+
+    .form-container a:hover {
+        color: #2d2b98;
+
+
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="date"],
+    .form-group select {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="date"]:focus,
+    .form-group select:focus {
+        border-color: #424447;
+        outline: none;
+    }
+
+    .form-group .gender-group {
+        display: flex;
+        gap: 20px;
+    }
+
+    .form-group .gender-group label {
+        font-size: 16px;
+        color: #555;
+        display: flex;
+        align-items: center;
+    }
+
+    .form-group .gender-group input[type="radio"] {
+        margin-right: 8px;
+    }
+
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+
+    .form-buttons button {
+        width: 48%;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .form-buttons .cancel-button {
+        background-color: #d9534f;
+    }
+
+    .form-buttons .cancel-button:hover {
+        background-color: #c9302c;
+    }
+
+    .form-buttons .submit-button {
+        background-color: #5cb85c;
+    }
+
+    .form-buttons .submit-button:hover {
+        background-color: #4cae4c;
+    }
+</style>
+{% endblock %}
+
+{% block contenu %}
+    
+<section>
+    <nav class="navbar">
+
+        <img src={% static "image/logo.png" %} alt="">
+        <div class="profile">
+            <span class="fas fa-search"></span>
+            <p class="name1">Lorem ipsum </p>
+        </div>
+
+    </nav>
+
+</section>
+
+<!-- menu -->
+
+<section>
+
+    <input type="checkbox" id="toggle">
+    <label class="side-toggle" for="toggle"><span class="fas fa-bars"></span></label>
+
+
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <span class="fas fa-dashboard"></span>
+            <p><a href="{% url 'dashboard:dashboard' %}">Tableau de bord</a></p>
+           
+    
+        </div>
+    
+    <div class="sidebar-menu">
+        <span class="fas fa-users">
+    
+        </span>
+        
+        <p><a href="{% url 'student:student' %}">Students</a></p>
+    </div>
+    
+    <div class="sidebar-menu">
+    <span class="fas fa-chalkboard-teacher"></span>
+    <p><a href="{% url 'teacher:teacher' %}">Teacher</a></p>
+    </div>
+    
+    <div class="sidebar-menu">
+        <span class="fas fa-users"></span>
+        <p><a href="{% url 'user:user' %}">User</a></p>
+    
+    </div>
+    
+    <div class="sidebar-menu">
+        <span class="fas fa-id-card"></span>
+        
+        <p><a href="{% url 'report:report' %}">report</a></p>
+       
+    
+    </div>
+    <div class="sidebar-menu">
+        <p><a href="{% url 'dashboard:index' %}">Deconnexion</a></p><span class="fas fa-arrow-right"></span>
+    </div>
+    
+    </div>
+
+</section>
+
+
+<!--Formulaire -->
+
+<section class="grouper">
+
+    <div class="form-container">
+        <h1>Ajouter un élève</h1>
+        <p> <a href="{% url 'student:student' %}">Back <i class="	fas fa-arrow-circle-right"></i></a></p>
+        <form method="POST">
+        {% csrf_token %}
+        {{ stud_form|crispy }}
+           
+            <div class="form-buttons">
+                <button type="button" class="cancel-button">Annuler</button>
+                <button type="submit" class="submit-button">Enregistrer</button>
+            </div>
+        </form>
+    </div>
+
+</section>
+
+
+<script src={% static "js/code.js" %}></script>
+    
+{% endblock %}

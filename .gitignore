@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+*.env
+
+# If you are using SQLite3 database files
+db.sqlite3
+db.sqlite3-journal
+
+# Django migrations
+*/migrations/*
+
+# Media and static files
+media/
+staticfiles/
+
+# Ignore static root directory if you're using Django's `collectstatic`
+/static/
+
+# Bootstrap-related (if installed via package manager)
+node_modules/
+bower_components/
+
+# If you're using virtual environments
+venv/
+env/
+ENV/
+myenv/
+
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# macOS specific
+.DS_Store
+
+# Visual Studio Code
+.vscode/
+
+# PyCharm specific
+.idea/
+
+# Other editors
+*.swp

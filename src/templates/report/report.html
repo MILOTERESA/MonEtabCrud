@@ -1,0 +1,220 @@
+{% load static %}
+<!doctype html>
+		<html>
+		<head>
+		<meta charset="UTF-8">
+		<title>Bienvenue</title>
+
+			 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+			<!-- font awesome cdn link -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+	<!-- custom css file link -->
+	
+	<link rel="stylesheet" href={% static "style.css" %}>
+								
+</head>
+
+<style>
+
+.oui {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-section {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.pdf {
+    background-color: #d9534f;
+}
+
+.excel {
+    background-color: #5cb85c;
+}
+
+.btn:hover {
+    opacity: 0.9;
+
+}
+
+</style>
+
+<body>
+    
+<!--navbar-->
+<section>
+<nav class="navbar">
+   
+    <img src={% static "image/logo.png" %} alt="">
+    <div class="profile">
+        <span class="fas fa-search"></span>
+      <p class="name1">Lorem ipsum </p>
+    </div>
+
+</nav>
+
+</section>
+
+<!-- menu -->
+<section class="oui">
+
+<input type="checkbox" id="toggle">
+<label class="side-toggle" for="toggle"><span class="fas fa-bars"></span></label>
+
+
+<div class="sidebar">
+    <div class="sidebar-menu">
+        <span class="fas fa-dashboard"></span>
+        <p><a href="{% url 'dashboard:dashboard' %}">Tableau de bord</a></p>
+       
+
+    </div>
+
+<div class="sidebar-menu">
+    <span class="fas fa-users">
+
+    </span>
+    
+    <p><a href="{% url 'student:student' %}">Student</a></p>
+</div>
+
+<div class="sidebar-menu">
+<span class="fas fa-chalkboard-teacher"></span>
+<p><a href="{% url 'teacher:teacher' %}">Teacher</a></p>
+</div>
+
+<div class="sidebar-menu">
+    <span class="fas fa-users"></span>
+    <p><a href="{% url 'user:user' %}">User</a></p>
+
+</div>
+
+<div class="sidebar-menu">
+    <span class="fas fa-id-card"></span>
+    
+    <p><a href="{% url 'report:report' %}">report</a></p>
+   
+
+</div>
+<div class="sidebar-menu">
+    <p><a href="{% url 'dashboard:index' %}">Deconnexion</a></p><span class="fas fa-arrow-right"></span>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="oui">
+
+
+    <div class="container">
+        <h1>Rapport</h1>
+        <div class="form-container">
+            <div class="left-section">
+                <label for="select-option">Sélectionner une option:</label>
+                <select id="select-option">
+                    <option value="eleves">List of student</option>
+                    <option value="professeurs">List of teacher</option>
+                    <option value="utilisateurs">List of user</option>
+                </select>
+            </div>
+            <div class="right-section">
+                <button class="btn pdf">Générer format PDF</button>
+                <button class="btn excel">Générer format Excel</button>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<script src={% static "js/code.js" %}></script>
+	
+	
+	
+	
+	
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+{% load static %}
+<!doctype html>
+		<html>
+		<head>
+		<meta charset="UTF-8">
+		<title>Bienvenue</title>
+
+			 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+			<!-- font awesome cdn link -->
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+	<!-- custom css file link -->
+	
+	<link rel="stylesheet" href={% static "style.css" %}>
+								
+</head>
+
+<body>
+    
+<!--navbar-->
+<section>
+<nav class="navbar">
+   
+   <img src={% static "image/logo.png" %} alt="">
+    <div class="profile">
+        <span class="fas fa-search"></span>
+      <p class="name1">Lorem ipsum </p>
+    </div>
+
+</nav>
+
+</section>
+
+<!-- menu -->
+<section>
+
+<input type="checkbox" id="toggle">
+<label class="side-toggle" for="toggle"><span class="fas fa-bars"></span></label>
+
+
+<div class="sidebar">
+    <div class="sidebar-menu">
+        <span class="fas fa-dashboard"></span>
+        <p><a href="{% url 'dashboard:dashboard' %}">Tableau de bord</a></p>
+       
+
+    </div>
+
+<div class="sidebar-menu">
+    <span class="fas fa-users">
+
+    </span>
+    
+    <p><a href="{% url 'student:student' %}">student</a></p>
+</div>
+
+<div class="sidebar-menu">
+<span class="fas fa-chalkboard-teacher"></span>
+<p><a href="{% url 'teacher:teacher' %}">teacher</a></p>
+</div>
+
+<div class="sidebar-menu">
+    <span class="fas fa-users"></span>
+    <p><a href="{% url 'user:user' %}">User</a></p>
+
+</div>
+
+<div class="sidebar-menu">
+    <span class="fas fa-id-card"></span>
+    
+    <p><a href="{% url 'report:report' %}">report</a></p>
+   
+
+</div>
+<div class="sidebar-menu">
+    <p><a href="{url 'dashboard:login'}">Deconnexion</a></p><span class="fas fa-arrow-right"></span>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- <main>
+<div class="dashboard-container">
+ 
+
+    <div class="card total1">
+        <div class="info">
+<div class="info-detail">
+
+    <h3>Revenue</h3>
+    <p>Lorem, ipsum.</p>
+    <h2>156789 <span>USD</span></h2>
+</div>
+<div class="info-image">
+    <i class="fas fa-money-check-alt"></i>
+</div>
+        </div>
+
+    </div>
+
+    <div class="card total2">
+        <div class="info">
+         <div class="info-detail">
+            <h3>Total Orders</h3>
+            <p>Lorem ipsum dolor</p>
+            <h2>10987654 <span>orders</span></h2>
+         </div>  
+         
+    </div>
+    </div>
+<div class="card total3">
+    <div class="info-detail">
+        <h3>Total Orders</h3>
+        <p>Lorem ipsum dolor</p>
+        <h2>10987654 <span>orders</span></h2>
+     </div>  
+    
+</div>
+</div>
+<div class="card total4">
+    <div class="info-detail">
+        <h3>Total Orders</h3>
+        <p>Lorem ipsum dolor</p>
+        <h2>10987654 <span>orders</span></h2>
+     </div>  
+    
+</div>
+
+</div>
+
+</main> -->
+
+
+<!-- A propos des articles ... section starts -->
+	
+<section class="tous" >
+	
+	<h1 class="heading">Tableau <span>de bord</span> </h1>
+		
+		<div class="tablebord">
+		
+		<div class="tables" id="total1">
+		
+			
+			<h3>Nombre d'élève</h3>
+		
+			
+            <h2>128 100</h2>
+		
+		</div>
+			
+		<div class="tables" id="total2">
+            <h3>Nombre de professeur</h3>
+		
+			
+            <h2>128 100</h2>
+		
+		
+		</div>
+		
+			
+		<div class="tables" id="total3">
+            <h3>Nombre d'utilisateur</h3>
+		
+            <h2>128 100</h2>
+		
+		
+		
+		</div>
+			
+			
+		<div class="tables" id="total4">
+            <h3>Eleve par genre</h3>
+		
+            <i class="	fas fa-chart-pie"></i>
+		
+		
+		
+		</div>
+			
+			
+			</div>
+		
+	
+	
+	</section>
+	
+	
+
+	
+	<!-- A propos des articles ... section ends --> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<script src={% static "js/code.js" %}></script>
+	
+	
+	
+	
+	
+
+</body>
+</html>
